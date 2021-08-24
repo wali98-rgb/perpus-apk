@@ -25,6 +25,7 @@
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Email</th>
                     <th scope="col">No.Hp</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,8 +38,12 @@
                     <td> {{$ang->email}} </td>
                     <td> {{$ang->no_telp}} </td>
                     <td>
-                        <a href="" class="badge badge-primary">Edit</a>
-                        <a href="" class="badge badge-danger">Hapus</a>
+                        <form action="" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <a href="/anggota/{$id}/edit" class="badge badge-primary">Edit</a>
+                            <a href="/anggota/delete" class="badge badge-danger">Hapus</a>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

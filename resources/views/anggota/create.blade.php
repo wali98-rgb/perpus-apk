@@ -10,12 +10,16 @@
         <form action="/anggota" method="POST">
         @csrf
         <div class="form-group">
+            <label for="nama_anggota">Nama Anggota</label>
+            <input type="text" name="nama_anggota" class="form-control" id="nama_anggota" placeholder="Nama Anggota" value="{{old('nama_anggota')}}">
+        </div>
+        <div class="form-group">
             <label for="alamat">Alamat</label>
             <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat Anggota" value="{{old('alamat')}}">
         </div>
         <div class="form-group">
-            <label for="jenis_kelamin">Jenis Kelamin</label>
-            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+            <label for="">Jenis Kelamin</label>
+            <select name="jenis_kelamin" id="" class="form-control">
                 <option value="laki-laki">Laki-laki</option>
                 <option value="perempuan">Perempuan</option>
             </select>
