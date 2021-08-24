@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Transaksi;
-use App\Buku;
-use App\Anggota;
-use App\Kategori;
+use App\Models\Transaksi;
+use App\Models\Buku;
+use App\Models\Anggota;
+use App\Models\Kategori;
 use DB;
 
 class TransaksiController extends Controller

@@ -94,8 +94,8 @@
                 $('#id_buku').val("");
             }else{
                 $('#judul_buku').val(data[0].judul_buku);
-                $('#deskripsi').val(data[0].judul_buku);
-                $('#kategori').val(data[0].judul_buku);
+                $('#deskripsi').val(data[0].deskripsi);
+                $('#kategori').val(data[0].kategori);
             }
         });
     }

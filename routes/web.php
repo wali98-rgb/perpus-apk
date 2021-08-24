@@ -39,10 +39,17 @@ Route::get('/kategori/create', [KategoriController::class, 'create']);
 Route::post('/kategori', [KategoriController::class, 'store']);
 
 // Route Buku
-Route::resource('buku', 'BukuController');
-Route::resource('transaksi', 'TransaksiController');
+// Route::resource('buku', 'BukuController');
+Route::get('/buku', [BukuController::class, 'index']);
+Route::get('/buku/create', [BukuController::class, 'create']);
+Route::post('/buku', [BukuController::class, 'store']);
 
+// Route Transaksi
+// Route::resource('transaksi', 'TransaksiController');
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::get('/transaksi/create', [TransaksiController::class, 'create']);
+Route::post('/transaksi', [TransaksiController::class, 'store']);
 Route::get('transaksi/edit/{id}',[TransaksiController::class, 'edit']);
-Route::get('transaksi/showBuku/{id}','TransaksiController@showBuku');
-Route::get('transaksi/getAnggota/{id}','TransaksiController@getAnggota');
-Route::post('transaksi/update/{id}','TransaksiController@update');
+Route::get('transaksi/showBuku/{id}',[TransaksiController::class, 'showBuku']);
+Route::get('transaksi/getAnggota/{id}',[TransaksiController::class, 'getAnggota']);
+Route::post('transaksi/update/{id}',[TransaksiController::class, 'update']);

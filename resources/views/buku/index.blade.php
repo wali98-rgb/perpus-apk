@@ -24,6 +24,7 @@
                     <th scope="col">Deskripsi Buku</th>
                     <th scope="col">Kategori Buku</th>
                     <th scope="col">Cover Buku</th>
+                    <th scope="col">Action</th>
                     <th></th>
                 </tr>
             </thead>
