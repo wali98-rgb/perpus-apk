@@ -83,6 +83,7 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Anggota::destroy($id);
+        return redirect('anggota');
     }
 }

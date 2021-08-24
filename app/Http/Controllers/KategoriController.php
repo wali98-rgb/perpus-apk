@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kategori;
+use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
@@ -37,7 +37,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         Kategori::create($request->all());
-        return redirect('kategori')->with('msg', 'Data Berhasil Di Simoan.');
+        return redirect('kategori')->with('msg', 'Data Berhasil Di Simpan.');
     }
 
     /**

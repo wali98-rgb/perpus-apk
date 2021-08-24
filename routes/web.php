@@ -30,10 +30,15 @@ Route::get('/anggota', [AnggotaController::class, 'index']);
 Route::get('/anggota/create', [AnggotaController::class, 'create']);
 Route::post('/anggota', [AnggotaController::class, 'store']);
 Route::get('/anggota/{$id}/edit', [AnggotaController::class, 'edit']);
-Route::delete('/anggota/delete', [AnggotaController::class, 'destroy']);
+Route::delete('/anggota/{$id}', [AnggotaController::class, 'destroy']);
 
 // Route Kategori
-Route::resource('kategori', 'KategoriController');
+// Route::resource('kategori', 'KategoriController');
+Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/kategori/create', [KategoriController::class, 'create']);
+Route::post('/kategori', [KategoriController::class, 'store']);
+
+// Route Buku
 Route::resource('buku', 'BukuController');
 Route::resource('transaksi', 'TransaksiController');
 

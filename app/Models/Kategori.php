@@ -10,5 +10,5 @@ class Kategori extends Model
     use HasFactory;
 
     protected $table = "table_kategori";
-    protected $fllable = ['deskripsi'];
+    protected $fillable = ['deskripsi'];
 }
