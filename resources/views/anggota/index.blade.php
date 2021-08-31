@@ -42,7 +42,7 @@
                             @csrf
                             @method('DELETE')
                             <a href="/anggota/{$id}/edit" class="badge badge-primary">Edit</a>
-                            <input type="submit" class="btn btn-danger" value="Delete">
+                            <input type="submit" class="btn btn-danger" value="Hapus">
                             <!-- <a href="/anggota/delete" class="badge badge-danger">Hapus</a> -->
                         </form>
                     </td>

@@ -29,8 +29,8 @@ Route::get('/', function () {
 Route::get('/anggota', [AnggotaController::class, 'index']);
 Route::get('/anggota/create', [AnggotaController::class, 'create']);
 Route::post('/anggota', [AnggotaController::class, 'store']);
-Route::get('/anggota/{$id}/edit', [AnggotaController::class, 'edit']);
-Route::delete('/anggota/{$id}', [AnggotaController::class, 'destroy']);
+Route::get('/anggota/{id}/edit', [AnggotaController::class, 'edit']);
+Route::delete('/anggota/{id}', [AnggotaController::class, 'destroy']);
 
 // Route Kategori
 // Route::resource('kategori', 'KategoriController');

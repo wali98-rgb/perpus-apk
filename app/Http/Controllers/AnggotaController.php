@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Anggota;
+use DB;
 
 class AnggotaController extends Controller
 {
@@ -81,9 +82,13 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        Anggota::destroy($id);
-        return redirect('anggota');
+        // DB::table('table_anggota')->where('id', $id)->delete();
+
+        // orm
+        $anggota = Anggota::find('id_anggota');
+
+        $anggota->delete();
     }
 }
