@@ -31,8 +31,13 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$kat->deskripsi}}</td>
                     <td>
-                        <a href="" class="badge badge-primary">Edit</a>
-                        <a href="" class="badge badge-danger">Hapus</a>
+                        <a href="{{ url('kategori/'.$kat->kategori.'/edit') }}" class="badge badge-primary">Edit</a>
+                        <form action="{{ url('kategori/'.$kat->kategori) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger" type="submit">DELETE</button>
+                        </form>
+                        <!-- <a href="" class="badge badge-danger">Hapus</a> -->
                     </td>
                 </tr>
                 @endforeach
