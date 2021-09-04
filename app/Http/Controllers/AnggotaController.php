@@ -58,9 +58,9 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_anggota)
     {
-        $anggota = Anggota::find($id);
+        $anggota = Anggota::find($id_anggota);
         return view('anggota.edit', compact('anggota'));
     }
 
@@ -71,9 +71,10 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_anggota)
     {
-        //
+        Anggota::update($request->all());
+        return redirect('anggota')->with('msg','Data Berhasil Di Simpan.');
     }
 
     /**
@@ -82,13 +83,13 @@ class AnggotaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id_anggota)
     {
         // DB::table('table_anggota')->where('id', $id)->delete();
 
         // orm
-        $anggota = Anggota::find('id_anggota');
-
+        $anggota = Anggota::find($id_anggota);
         $anggota->delete();
+        return redirect('anggota');
     }
 }

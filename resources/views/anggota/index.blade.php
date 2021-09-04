@@ -38,12 +38,13 @@
                     <td> {{$ang->email}} </td>
                     <td> {{$ang->no_telp}} </td>
                     <td>
-                        <form action="/anggota/{$id}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <a href="/anggota/{$id}/edit" class="badge badge-primary">Edit</a>
-                            <input type="submit" class="btn btn-danger" value="Hapus">
-                            <!-- <a href="/anggota/delete" class="badge badge-danger">Hapus</a> -->
+                        <a href="{{ url('anggota/'.$ang->id_anggota.'/edit') }}" class="badge badge-primary">Edit</a>
+                        <form action="{{ url('anggota/'.$ang->id_anggota) }}" method="POST">
+                        @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <!-- <input type="submit" class="btn btn-danger" value="Hapus"> -->
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                            <!-- <a href="{{ url('anggota/'.$ang->id_anggota.'/destroy') }}" class="badge badge-danger">Hapus</a> -->
                         </form>
                     </td>
                 </tr>
