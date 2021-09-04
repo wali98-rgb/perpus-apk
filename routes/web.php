@@ -25,27 +25,27 @@ Route::get('/', function () {
 });
 
 // Route Anggota
-// Route::resource('anggota', [AnggotaController::class]);
-Route::get('/anggota', [AnggotaController::class, 'index']);
-Route::get('/anggota/create', [AnggotaController::class, 'create']);
-Route::post('/anggota', [AnggotaController::class, 'store']);
-Route::get('/anggota/{id}/edit', [AnggotaController::class, 'edit']);
-Route::delete('/anggota/{id}', [AnggotaController::class, 'destroy']);
+Route::resource('anggota', AnggotaController::class);
+// Route::get('/anggota', [AnggotaController::class, 'index']);
+// Route::get('/anggota/create', [AnggotaController::class, 'create']);
+// Route::post('/anggota', [AnggotaController::class, 'store']);
+// Route::get('/anggota/{id}/edit', [AnggotaController::class, 'edit']);
+// Route::delete('/anggota/{id}', [AnggotaController::class, 'destroy']);
 
 // Route Kategori
-// Route::resource('kategori', 'KategoriController');
-Route::get('/kategori', [KategoriController::class, 'index']);
-Route::get('/kategori/create', [KategoriController::class, 'create']);
-Route::post('/kategori', [KategoriController::class, 'store']);
+Route::resource('kategori', KategoriController::class);
+// Route::get('/kategori', [KategoriController::class, 'index']);
+// Route::get('/kategori/create', [KategoriController::class, 'create']);
+// Route::post('/kategori', [KategoriController::class, 'store']);
 
 // Route Buku
-// Route::resource('buku', 'BukuController');
-Route::get('/buku', [BukuController::class, 'index']);
-Route::get('/buku/create', [BukuController::class, 'create']);
-Route::post('/buku', [BukuController::class, 'store']);
+Route::resource('buku', BukuController::class);
+// Route::get('/buku', [BukuController::class, 'index']);
+// Route::get('/buku/create', [BukuController::class, 'create']);
+// Route::post('/buku', [BukuController::class, 'store']);
 
 // Route Transaksi
-// Route::resource('transaksi', 'TransaksiController');
+Route::resource('transaksi', TransaksiController::class);
 Route::get('/transaksi', [TransaksiController::class, 'index']);
 Route::get('/transaksi/create', [TransaksiController::class, 'create']);
 Route::post('/transaksi', [TransaksiController::class, 'store']);
