@@ -39,7 +39,7 @@
                     <td>{{$trans->tgl_kembali}}</td>
                     <td>
                         @if($trans->tgl_kembali == null)
-                        <a href="transaksi/edit/{{$trans->id}}" class="badge badge-primary">Pengembalian</a>
+                        <a href="{{ 'transaksi/'.$trans->id.'/edit' }}}" class="badge badge-primary">Pengembalian</a>
                         @else
                         <p class="badge badge-seccuss">Dikembalikan</p>
                         @endif
