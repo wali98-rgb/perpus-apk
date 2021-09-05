@@ -154,6 +154,8 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pinjaman = Transaksi::find($id);
+        $pinjaman->delete();
+        return redirect('transaksi');
     }
 }
