@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Kategori</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" colspan="2">Action</th>
                     <th></th>
                 </tr>
             </thead>
@@ -32,6 +32,8 @@
                     <td>{{$kat->deskripsi}}</td>
                     <td>
                         <a href="{{ url('kategori/'.$kat->kategori.'/edit') }}" class="badge badge-primary">Edit</a>
+                    </td>
+                    <td>
                         <form action="{{ url('kategori/'.$kat->kategori) }}" method="POST">
                             @csrf
                             <input type="hidden" name="_method" value="DELETE">

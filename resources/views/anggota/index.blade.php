@@ -25,7 +25,7 @@
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Email</th>
                     <th scope="col">No.Hp</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" colspan="2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +39,8 @@
                     <td> {{$ang->no_telp}} </td>
                     <td>
                         <a href="{{ url('anggota/'.$ang->id_anggota.'/edit') }}" class="badge badge-primary">Edit</a>
+                    </td>
+                    <td>
                         <form action="{{ url('anggota/'.$ang->id_anggota) }}" method="POST">
                         @csrf
                             <input type="hidden" name="_method" value="DELETE">
