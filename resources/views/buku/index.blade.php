@@ -39,8 +39,13 @@
                         <td>{{ $buku->kategori }}</td>
                         <td><img src='image/{{ $buku->cover_img }}' style='width:80px; height:50px;'></td>
                         <td>
-                            <a href="buku/edit/{{ $buku->id_buku }}" class="badge badge-primary">Edit</a>
-                            <a href="buku/destroy/{{ $buku->id_buku }}" class="badge badge-danger">Hapus</a>
+                            <a href="{{'buku/'.$buku->id_buku.'/edit'}}" class="badge badge-primary">Edit</a>
+                            <form action="{{ 'buku/'.$buku->id_buku }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger" type="submit">Hapus</button>
+                            </form>
+                            <!-- <a href="buku/destroy/{{ $buku->id_buku }}" class="badge badge-danger">Hapus</a> -->
                         </td>
                     </tr>
                 @endforeach

@@ -32,7 +32,8 @@ class BukuController extends Controller
     public function create()
     {
         $kategori = Kategori::all();
-        return view('buku.create', compact('kategori'));
+        $buku = Buku::all();
+        return view('buku.create', compact('kategori','buku'));
     }
 
     /**
@@ -82,7 +83,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::find($id);
+        return view('buku.edit', compact('buku'));
     }
 
     /**
@@ -94,7 +96,23 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul_buku' => 'required',
+            'deskripsi' => 'required'
+        ]);
+
+        $file = $request->file('cover_img');
+        $buku = Buku::find($id);
+        $buku->judul_buku = $request->judul_buku;
+        $buku->deskripsi = $request->deskripsi;
+        $buku->kategori = $request->kategori;
+        $buku->cover_img = $file->getClientOriginalName();
+        
+        $tujuan_upload = 'image';
+        $file->move($tujuan_upload,$file->getClientOriginalName());
+        $buku->update();
+
+        return redirect('buku')->with('msg', 'Data Berhasil Di Simpan.');
     }
 
     /**
@@ -105,6 +123,8 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buku = Buku::find($id);
+        $buku->delete();
+        return redirect('buku');
     }
 }
